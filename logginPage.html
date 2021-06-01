@@ -34,7 +34,7 @@
       <hr>
       <br>
      
-     <form action="/action_page.php">
+     <form>
     <label for="fname"> UserName</label>
     <input type="text" id="fname" name="firstname" placeholder="enter your Username.." required>
       <br>
@@ -74,19 +74,27 @@
     
     <script src="script.js"></script>
     
-    <script language="javascript">
-function check(form)/*function to check userid & password*/
+    <script language="javascript"> 
+      var submit=document.getElementById("submit")
+    
+  
+    
+    
+function check(event)/*function to check userid & password*/
 {
+  event.preventDefault()
+  window.open('index.html')
  /*the following code checkes whether the entered userid and password are matching*/
- if(form.userid.value == "sebastian" && form.pswrd.value == "123")
-  {
-    window.open('index.html')/*opens the target page while Id & password matches*/
-  }
- else
- {
-   alert("Error Password or Username")/*displays error message*/
-  }
+// if(form.userid.value == "sebastian" && form.pswrd.value == "123")
+//   {
+//     window.open('index.html')/*opens the target page while Id & password matches*/
+//   }
+// else
+// {
+//   alert("Error Password or Username")/*displays error message*/
+//   }
 }
+submit.addEventListener("click", check)
 </script>
   </body>
   
